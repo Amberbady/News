@@ -14,11 +14,23 @@ class MineViewController: UITableViewController {
     // 存储我的关注数据
     var concerns = [MyConcern]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.globalBackgroundColor()
-        
+        tableView.separatorStyle = .none
+        tableView.theme_backgroundColor = "colors.tableViewBackgroundColor"
+        tableView.tableHeaderView = headerView
         tableView.ym_registerCell(cell: MyFisrtSectionCell.self)
         tableView.ym_registerCell(cell: MyOtherCell.self)
        
@@ -30,9 +42,25 @@ class MineViewController: UITableViewController {
             self.sections.append(myConcerns)
             self.sections += sections
             self.tableView.reloadData()
+            
+            NetworkTool.loadMyConcern { (concerns) in
+                self.concerns = concerns
+                let indextSet = IndexSet(integer: 0)
+                self.tableView.reloadSections(indextSet, with: .automatic)
+            }
         }
     }
-
+    
+    fileprivate lazy var headerView: NoLoginHeaderView = {
+        let headerView = NoLoginHeaderView.headerView()
+        return headerView
+    }()
+    
+    //设置状态栏白色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension MineViewController {
@@ -49,7 +77,7 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
-        view.backgroundColor = UIColor.globalBackgroundColor()
+        view.theme_backgroundColor = "colors.tableViewBackgroundColor"
         return view
     }
     
@@ -65,9 +93,18 @@ extension MineViewController {
         if indexPath.row == 0 && indexPath.section == 0 {
             let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as MyFisrtSectionCell
             let section = sections[indexPath.section]
-            let myCellModel = section[indexPath.row]
-            cell.leftLabel?.text = myCellModel.text
-            cell.rightLabel?.text = myCellModel.grey_text
+            cell.myCellModel = section[indexPath.row]
+            if concerns.count == 0 || concerns.count == 1{
+                cell.collectionView.isHidden = true
+            }
+            if concerns.count == 1 {
+                cell.myConcern = concerns[0]
+            }
+            
+            if concerns.count > 1 {
+                cell.myConcerns = concerns
+            }
+//            cell.delegate = self as! MyFisrtSectionCellDelegate
             return cell
         }
         let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath)  as MyOtherCell
@@ -80,5 +117,14 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            let totalOffset = kMyHeaderViewHeight + abs(offsetY)
+            let f = totalOffset / kMyHeaderViewHeight
+            headerView.bgImageView.frame = CGRect(x: -screenWidth * (f - 1) * 0.5, y: offsetY, width: screenWidth * f, height: totalOffset)
+        }
     }
 }
