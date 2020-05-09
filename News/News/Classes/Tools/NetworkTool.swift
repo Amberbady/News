@@ -16,7 +16,7 @@ protocol NetworkToolProtocol {
     //我的界面cell 数据
     static func loadMyCellData(completionHandler: @escaping (_ sections:[[MyCellModel]]) -> ())
     //我的关注
-    static func loadMyConcern()
+    static func loadMyConcern(completionHandler: @escaping (_ concerns: [MyConcern]) -> ())
 }
 
 extension NetworkToolProtocol {
@@ -55,8 +55,30 @@ extension NetworkToolProtocol {
         
     }
     
-    static func loadMyConcern(){
-        
+    //我的关注
+    static func loadMyConcern(completionHandler: @escaping (_ concerns: [MyConcern]) -> ()){
+        let url = BASE_URL + "/concern/v2/follow/my_follow/?"
+        let params = ["device_id": device_id]
+        Alamofire.request(url,parameters: params).responseJSON { (response) in
+            guard response.result.isSuccess else {
+                // 网络错误的提示信息
+                return
+            }
+            if let value = response.result.value {
+                let json = JSON(value)
+                guard json["message"] == "success" else {
+                    return
+                }
+                if let datas = json["data"].arrayObject {
+                    var concserns = [MyConcern]()
+                    for data in datas {
+                        let myCellModel = MyConcern.deserialize(from: data as? NSDictionary)
+                        concserns.append(myCellModel!)
+                    }
+                    completionHandler(concserns)
+                }
+            }
+        }
     }
 }
 

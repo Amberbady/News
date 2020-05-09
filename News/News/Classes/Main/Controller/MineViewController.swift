@@ -30,6 +30,10 @@ class MineViewController: UITableViewController {
             self.sections.append(myConcerns)
             self.sections += sections
             self.tableView.reloadData()
+            
+            NetworkTool.loadMyConcern { (concerns) in
+                self.concerns = concerns
+            }
         }
     }
 
