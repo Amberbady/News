@@ -14,11 +14,22 @@ class MineViewController: UITableViewController {
     // 存储我的关注数据
     var concerns = [MyConcern]()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.globalBackgroundColor()
-        
+        tableView.separatorStyle = .none
+        tableView.tableHeaderView = headerView
         tableView.ym_registerCell(cell: MyFisrtSectionCell.self)
         tableView.ym_registerCell(cell: MyOtherCell.self)
        
@@ -38,7 +49,17 @@ class MineViewController: UITableViewController {
             }
         }
     }
-
+    
+    fileprivate lazy var headerView: NoLoginHeaderView = {
+        let headerView = NoLoginHeaderView.headerView()
+        return headerView
+    }()
+    
+    //设置状态栏白色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 extension MineViewController {
@@ -95,5 +116,14 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            let totalOffset = kMyHeaderViewHeight + abs(offsetY)
+            let f = totalOffset / kMyHeaderViewHeight
+            headerView.bgImageView.frame = CGRect(x: -screenWidth * (f - 1) * 0.5, y: offsetY, width: screenWidth * f, height: totalOffset)
+        }
     }
 }

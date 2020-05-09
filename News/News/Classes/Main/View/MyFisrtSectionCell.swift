@@ -35,6 +35,7 @@ class MyFisrtSectionCell: UITableViewCell, RegisterCellOrNib {
         didSet {
             collectionView.reloadData()
         }
+
     }
     
     var myCellModel: MyCellModel? {

@@ -36,6 +36,11 @@
 		4B12D5E924655FFA00CCDAB9 /* MyFisrtSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5E724655FF900CCDAB9 /* MyFisrtSectionCell.xib */; };
 		4B12D5EC2465604200CCDAB9 /* MyConcernCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5EA2465604100CCDAB9 /* MyConcernCell.xib */; };
 		4B12D5ED2465604200CCDAB9 /* MyConcernCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D5EB2465604100CCDAB9 /* MyConcernCell.swift */; };
+		4B12D5F0246681B600CCDAB9 /* NoLoginHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D5EE246681B500CCDAB9 /* NoLoginHeaderView.swift */; };
+		4B12D5F1246681B600CCDAB9 /* NoLoginHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5EF246681B500CCDAB9 /* NoLoginHeaderView.xib */; };
+		4B12D5F3246681F000CCDAB9 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D5F2246681F000CCDAB9 /* MyTheme.swift */; };
+		4B12D5F62466849300CCDAB9 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5F42466849300CCDAB9 /* night_theme.plist */; };
+		4B12D5F72466849300CCDAB9 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5F52466849300CCDAB9 /* default_theme.plist */; };
 		793D4408308C3FEFD6B5E42A /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE5D61D4B391574F054DEC7 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		4B12D5E724655FF900CCDAB9 /* MyFisrtSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyFisrtSectionCell.xib; sourceTree = "<group>"; };
 		4B12D5EA2465604100CCDAB9 /* MyConcernCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyConcernCell.xib; sourceTree = "<group>"; };
 		4B12D5EB2465604100CCDAB9 /* MyConcernCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyConcernCell.swift; sourceTree = "<group>"; };
+		4B12D5EE246681B500CCDAB9 /* NoLoginHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoLoginHeaderView.swift; sourceTree = "<group>"; };
+		4B12D5EF246681B500CCDAB9 /* NoLoginHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoLoginHeaderView.xib; sourceTree = "<group>"; };
+		4B12D5F2246681F000CCDAB9 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
+		4B12D5F42466849300CCDAB9 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
+		4B12D5F52466849300CCDAB9 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
 		4DE5D61D4B391574F054DEC7 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A625A1D9A307C6513460737 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				4B12D5CF24653E6600CCDAB9 /* NetworkTool.swift */,
+				4B12D5F2246681F000CCDAB9 /* MyTheme.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -307,6 +318,8 @@
 		4B12D5742464132A00CCDAB9 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				4B12D5F52466849300CCDAB9 /* default_theme.plist */,
+				4B12D5F42466849300CCDAB9 /* night_theme.plist */,
 				4B12D5DE2465446F00CCDAB9 /* Const.swift */,
 				4B12D5CD2464FBB600CCDAB9 /* timg.jpeg */,
 			);
@@ -383,6 +396,8 @@
 				4B12D5E724655FF900CCDAB9 /* MyFisrtSectionCell.xib */,
 				4B12D5EB2465604100CCDAB9 /* MyConcernCell.swift */,
 				4B12D5EA2465604100CCDAB9 /* MyConcernCell.xib */,
+				4B12D5EE246681B500CCDAB9 /* NoLoginHeaderView.swift */,
+				4B12D5EF246681B500CCDAB9 /* NoLoginHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,9 +531,12 @@
 				4B12D5E52465573E00CCDAB9 /* MyOtherCell.xib in Resources */,
 				4B12D5352464010200CCDAB9 /* LaunchScreen.storyboard in Resources */,
 				4B12D5E924655FFA00CCDAB9 /* MyFisrtSectionCell.xib in Resources */,
+				4B12D5F72466849300CCDAB9 /* default_theme.plist in Resources */,
 				4B12D5322464010200CCDAB9 /* Assets.xcassets in Resources */,
 				4B12D5EC2465604200CCDAB9 /* MyConcernCell.xib in Resources */,
 				4B12D5CE2464FBB600CCDAB9 /* timg.jpeg in Resources */,
+				4B12D5F1246681B600CCDAB9 /* NoLoginHeaderView.xib in Resources */,
+				4B12D5F62466849300CCDAB9 /* night_theme.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,12 +638,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B12D5F3246681F000CCDAB9 /* MyTheme.swift in Sources */,
 				4B12D5592464094500CCDAB9 /* MyTabBarController.swift in Sources */,
 				4B12D5E124654B5700CCDAB9 /* MyCellModel.swift in Sources */,
 				4B12D561246411D200CCDAB9 /* VideoViewController.swift in Sources */,
 				4B12D57E2464176700CCDAB9 /* SceneDelegate.swift in Sources */,
 				4B12D5DC246542FA00CCDAB9 /* UIView+Extension.swift in Sources */,
 				4B12D5292464010100CCDAB9 /* AppDelegate.swift in Sources */,
+				4B12D5F0246681B600CCDAB9 /* NoLoginHeaderView.swift in Sources */,
 				4B12D5D024653E6600CCDAB9 /* NetworkTool.swift in Sources */,
 				4B12D5DF2465446F00CCDAB9 /* Const.swift in Sources */,
 				4B12D55B24640A1700CCDAB9 /* MyNavigationController.swift in Sources */,
