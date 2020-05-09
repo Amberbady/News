@@ -29,6 +29,7 @@ class MineViewController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.backgroundColor = UIColor.globalBackgroundColor()
         tableView.separatorStyle = .none
+        tableView.theme_backgroundColor = "colors.tableViewBackgroundColor"
         tableView.tableHeaderView = headerView
         tableView.ym_registerCell(cell: MyFisrtSectionCell.self)
         tableView.ym_registerCell(cell: MyOtherCell.self)
@@ -76,7 +77,7 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 60))
-        view.backgroundColor = UIColor.globalBackgroundColor()
+        view.theme_backgroundColor = "colors.tableViewBackgroundColor"
         return view
     }
     

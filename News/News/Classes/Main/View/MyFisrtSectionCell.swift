@@ -54,13 +54,13 @@ class MyFisrtSectionCell: UITableViewCell, RegisterCellOrNib {
         collectionView.dataSource = self
         collectionView.ym_registerCell(cell: MyConcernCell.self)
         /// 设置主题
-//        leftLabel.theme_textColor = "colors.black"
-//        rightLabel.theme_textColor = "colors.cellRightTextColor"
-//        rightImageView.theme_image = "images.cellRightArrow"
-//        separatorView.theme_backgroundColor = "colors.separatorViewColor"
-//        theme_backgroundColor = "colors.cellBackgroundColor"
-//        topView.theme_backgroundColor = "colors.cellBackgroundColor"
-//        collectionView.theme_backgroundColor = "colors.cellBackgroundColor"
+        leftLabel.theme_textColor = "colors.black"
+        rightLabel.theme_textColor = "colors.cellRightTextColor"
+        rightImageView.theme_image = "images.cellRightArrow"
+        separatorView.theme_backgroundColor = "colors.separatorViewColor"
+        theme_backgroundColor = "colors.cellBackgroundColor"
+        topView.theme_backgroundColor = "colors.cellBackgroundColor"
+        collectionView.theme_backgroundColor = "colors.cellBackgroundColor"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
