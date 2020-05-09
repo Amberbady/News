@@ -33,6 +33,8 @@ class MineViewController: UITableViewController {
             
             NetworkTool.loadMyConcern { (concerns) in
                 self.concerns = concerns
+                let indextSet = IndexSet(integer: 0)
+                self.tableView.reloadSections(indextSet, with: .automatic)
             }
         }
     }
@@ -69,9 +71,18 @@ extension MineViewController {
         if indexPath.row == 0 && indexPath.section == 0 {
             let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as MyFisrtSectionCell
             let section = sections[indexPath.section]
-            let myCellModel = section[indexPath.row]
-            cell.leftLabel?.text = myCellModel.text
-            cell.rightLabel?.text = myCellModel.grey_text
+            cell.myCellModel = section[indexPath.row]
+            if concerns.count == 0 || concerns.count == 1{
+                cell.collectionView.isHidden = true
+            }
+            if concerns.count == 1 {
+                cell.myConcern = concerns[0]
+            }
+            
+            if concerns.count > 1 {
+                cell.myConcerns = concerns
+            }
+//            cell.delegate = self as! MyFisrtSectionCellDelegate
             return cell
         }
         let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath)  as MyOtherCell
