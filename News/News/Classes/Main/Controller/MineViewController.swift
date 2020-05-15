@@ -51,6 +51,7 @@ class MineViewController: UITableViewController {
             }
         }
         
+        //运用RxSwift监听按钮点击事件
         headerView.moreLoginButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] in
             let storyboard = UIStoryboard(name: String(describing: MoreLoginViewController.self), bundle: nil)
             let moreLoginVC = storyboard.instantiateViewController(identifier: String(describing: MoreLoginViewController.self)) as! MoreLoginViewController
@@ -126,6 +127,13 @@ extension MineViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 3 {
+            if indexPath.row == 1 {//跳转设置界面
+                let settingVC = SettingViewController()
+                settingVC.navigationItem.title = "设置界面"
+                navigationController?.pushViewController(settingVC, animated: true)
+            }
+        }
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

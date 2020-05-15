@@ -43,6 +43,11 @@
 		4B12D5F72466849300CCDAB9 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5F52466849300CCDAB9 /* default_theme.plist */; };
 		4BDF5D79246E6BC0001F1FA7 /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */; };
 		4BDF5D7A246E6BC0001F1FA7 /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */; };
+		4BDF5D7C246E84CC001F1FA7 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF5D7B246E84CC001F1FA7 /* SettingModel.swift */; };
+		4BDF5D7E246E88F3001F1FA7 /* settingPlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF5D7D246E88F3001F1FA7 /* settingPlist.plist */; };
+		4BDF5D82246E894F001F1FA7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF5D81246E894F001F1FA7 /* SettingViewController.swift */; };
+		4BDF5D85246E91BA001F1FA7 /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF5D83246E91BA001F1FA7 /* SettingCell.xib */; };
+		4BDF5D86246E91BA001F1FA7 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF5D84246E91BA001F1FA7 /* SettingCell.swift */; };
 		793D4408308C3FEFD6B5E42A /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE5D61D4B391574F054DEC7 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -107,6 +112,11 @@
 		4B12D5F52466849300CCDAB9 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
 		4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
 		4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
+		4BDF5D7B246E84CC001F1FA7 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		4BDF5D7D246E88F3001F1FA7 /* settingPlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settingPlist.plist; sourceTree = "<group>"; };
+		4BDF5D81246E894F001F1FA7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4BDF5D83246E91BA001F1FA7 /* SettingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		4BDF5D84246E91BA001F1FA7 /* SettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		4DE5D61D4B391574F054DEC7 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A625A1D9A307C6513460737 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,6 +183,7 @@
 			children = (
 				4B12D5662464132900CCDAB9 /* Classes */,
 				4B12D5362464010200CCDAB9 /* Info.plist */,
+				4BDF5D7D246E88F3001F1FA7 /* settingPlist.plist */,
 				4B12D5312464010200CCDAB9 /* Assets.xcassets */,
 				4B12D5332464010200CCDAB9 /* LaunchScreen.storyboard */,
 				4B12D5282464010100CCDAB9 /* AppDelegate.swift */,
@@ -381,6 +392,7 @@
 				4B12D5642464120E00CCDAB9 /* MineViewController.swift */,
 				4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */,
 				4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */,
+				4BDF5D81246E894F001F1FA7 /* SettingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,6 +401,7 @@
 			isa = PBXGroup;
 			children = (
 				4B12D5E024654B5700CCDAB9 /* MyCellModel.swift */,
+				4BDF5D7B246E84CC001F1FA7 /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +417,8 @@
 				4B12D5EA2465604100CCDAB9 /* MyConcernCell.xib */,
 				4B12D5EE246681B500CCDAB9 /* NoLoginHeaderView.swift */,
 				4B12D5EF246681B500CCDAB9 /* NoLoginHeaderView.xib */,
+				4BDF5D84246E91BA001F1FA7 /* SettingCell.swift */,
+				4BDF5D83246E91BA001F1FA7 /* SettingCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -539,10 +554,12 @@
 				4B12D5352464010200CCDAB9 /* LaunchScreen.storyboard in Resources */,
 				4B12D5E924655FFA00CCDAB9 /* MyFisrtSectionCell.xib in Resources */,
 				4B12D5F72466849300CCDAB9 /* default_theme.plist in Resources */,
+				4BDF5D7E246E88F3001F1FA7 /* settingPlist.plist in Resources */,
 				4B12D5322464010200CCDAB9 /* Assets.xcassets in Resources */,
 				4B12D5EC2465604200CCDAB9 /* MyConcernCell.xib in Resources */,
 				4B12D5CE2464FBB600CCDAB9 /* timg.jpeg in Resources */,
 				4B12D5F1246681B600CCDAB9 /* NoLoginHeaderView.xib in Resources */,
+				4BDF5D85246E91BA001F1FA7 /* SettingCell.xib in Resources */,
 				4B12D5F62466849300CCDAB9 /* night_theme.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,8 +662,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF5D7C246E84CC001F1FA7 /* SettingModel.swift in Sources */,
 				4B12D5F3246681F000CCDAB9 /* MyTheme.swift in Sources */,
 				4B12D5592464094500CCDAB9 /* MyTabBarController.swift in Sources */,
+				4BDF5D82246E894F001F1FA7 /* SettingViewController.swift in Sources */,
 				4B12D5E124654B5700CCDAB9 /* MyCellModel.swift in Sources */,
 				4B12D561246411D200CCDAB9 /* VideoViewController.swift in Sources */,
 				4B12D57E2464176700CCDAB9 /* SceneDelegate.swift in Sources */,
@@ -669,6 +688,7 @@
 				4B12D5652464120E00CCDAB9 /* MineViewController.swift in Sources */,
 				4B12D5E824655FF900CCDAB9 /* MyFisrtSectionCell.swift in Sources */,
 				4B12D5D9246542FA00CCDAB9 /* UITableView+Extension.swift in Sources */,
+				4BDF5D86246E91BA001F1FA7 /* SettingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
