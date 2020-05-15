@@ -33,6 +33,9 @@ class SettingViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
          let cell = tableView.ym_dequeueReusableCell(indexPath: indexPath) as SettingCell
+        let rows = sections[indexPath.section]
+        cell.setting = rows[indexPath.row]
+        
         return cell
     }
 
