@@ -15,7 +15,8 @@ class SettingViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
+        // 从沙盒中获取缓存数据的大小
+        calculateDiskCashSize()
     }
 
     // MARK: - Table view data source
@@ -35,12 +36,34 @@ class SettingViewController: UITableViewController {
         return cell
     }
 
-
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 10))
+        view.theme_backgroundColor = "colors.tableViewBackgroundColor"
+        return view
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
 }
 
 extension SettingViewController {
+    /// 从沙盒中获取缓存数据的大小
+    fileprivate func calculateDiskCashSize() {
+        let cache = KingfisherManager.shared.cache
+        cache.calculateDiskCacheSize { (size) in
+            // 转换成 M
+            let sizeM = Double(size) / 1024.0 / 1024.0
+            let sizeString = String(format: "%.2fM", sizeM)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "cacheSizeM"), object: self, userInfo: ["cacheSize": sizeString])
+        }
     
+    }
 }
 
 extension SettingViewController {
