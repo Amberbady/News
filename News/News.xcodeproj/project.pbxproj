@@ -41,6 +41,8 @@
 		4B12D5F3246681F000CCDAB9 /* MyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12D5F2246681F000CCDAB9 /* MyTheme.swift */; };
 		4B12D5F62466849300CCDAB9 /* night_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5F42466849300CCDAB9 /* night_theme.plist */; };
 		4B12D5F72466849300CCDAB9 /* default_theme.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B12D5F52466849300CCDAB9 /* default_theme.plist */; };
+		4BDF5D79246E6BC0001F1FA7 /* MoreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */; };
+		4BDF5D7A246E6BC0001F1FA7 /* MoreLoginViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */; };
 		793D4408308C3FEFD6B5E42A /* Pods_News.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE5D61D4B391574F054DEC7 /* Pods_News.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +105,8 @@
 		4B12D5F2246681F000CCDAB9 /* MyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTheme.swift; sourceTree = "<group>"; };
 		4B12D5F42466849300CCDAB9 /* night_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = night_theme.plist; sourceTree = "<group>"; };
 		4B12D5F52466849300CCDAB9 /* default_theme.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = default_theme.plist; sourceTree = "<group>"; };
+		4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreLoginViewController.swift; sourceTree = "<group>"; };
+		4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MoreLoginViewController.storyboard; sourceTree = "<group>"; };
 		4DE5D61D4B391574F054DEC7 /* Pods_News.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_News.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A625A1D9A307C6513460737 /* Pods-News.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-News.release.xcconfig"; path = "Pods/Target Support Files/Pods-News/Pods-News.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -375,6 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				4B12D5642464120E00CCDAB9 /* MineViewController.swift */,
+				4BDF5D77246E6BBF001F1FA7 /* MoreLoginViewController.swift */,
+				4BDF5D78246E6BBF001F1FA7 /* MoreLoginViewController.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BDF5D7A246E6BC0001F1FA7 /* MoreLoginViewController.storyboard in Resources */,
 				4B12D5E52465573E00CCDAB9 /* MyOtherCell.xib in Resources */,
 				4B12D5352464010200CCDAB9 /* LaunchScreen.storyboard in Resources */,
 				4B12D5E924655FFA00CCDAB9 /* MyFisrtSectionCell.xib in Resources */,
@@ -657,6 +664,7 @@
 				4B12D5ED2465604200CCDAB9 /* MyConcernCell.swift in Sources */,
 				4B12D55D24640EF800CCDAB9 /* MyTabBar.swift in Sources */,
 				4B12D5E42465573E00CCDAB9 /* MyOtherCell.swift in Sources */,
+				4BDF5D79246E6BC0001F1FA7 /* MoreLoginViewController.swift in Sources */,
 				4B12D5D224653FD300CCDAB9 /* HomeNewsTitle.swift in Sources */,
 				4B12D5652464120E00CCDAB9 /* MineViewController.swift in Sources */,
 				4B12D5E824655FF900CCDAB9 /* MyFisrtSectionCell.swift in Sources */,
